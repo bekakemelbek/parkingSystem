@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.parkingsystem.ui.fragments.viewmodels.RegistrationViewModel" />
+
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".ui.fragments.LoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginConstraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#FFF"
+        android:paddingBottom="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.85">
+
+        <TextView
+            android:id="@+id/loginTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Регистрация"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/numberTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Номер"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/loginTxt"
+            app:layout_constraintTop_toBottomOf="@id/loginTxt" />
+
+        <EditText
+            android:id="@+id/numberEdit"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/edit_back"
+            android:fontFamily="@font/comfortaa"
+            android:hint="Номер"
+            android:text="@={viewmodel.number}"
+            android:inputType="phone"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/numberTxt"
+            app:layout_constraintTop_toBottomOf="@id/numberTxt" />
+
+        <TextView
+            android:id="@+id/tipTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="*Введите номер в формате как на примере: +77012223344"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/numberEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numberEdit" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tipTxt" />
+
+        <EditText
+            android:id="@+id/codeEdit"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/edit_back"
+            android:fontFamily="@font/comfortaa"
+            android:hint="Код"
+            android:text="@={viewmodel.code}"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/numberTxt"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:text="Отправить сообщение"
+        android:onClick="@{viewmodel::onButtonClicked}"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:fontFamily="@font/comfortaa"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/loginConstraint"
+        app:layout_constraintStart_toStartOf="@id/loginConstraint"
+        app:layout_constraintTop_toBottomOf="@id/loginConstraint" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

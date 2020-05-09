@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ParkingSystem</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="processing_3xdot">Обработка…</string>
+    <string name="change"><u>изменить</u></string>
+    <string name="add"><u>пополнить</u></string>
+    <string name="msg_subscribed">Success</string>
+    <string name="msg_subscribe_failed">Failed</string>
+
+</resources>
