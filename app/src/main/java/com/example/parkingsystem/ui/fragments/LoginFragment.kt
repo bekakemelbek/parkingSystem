@@ -3,6 +3,7 @@ package com.example.parkingsystem.ui.fragments
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,10 +34,12 @@ class LoginFragment : Fragment(),LoginListener {
     override fun onProgress() {
         progressBar = context!!.indeterminateProgressDialog(R.string.processing_3xdot)
         progressBar!!.show()
+        Log.e("ASD","asdprog")
     }
 
     override fun onSuccess() {
         progressBar!!.dismiss()
+        Log.e("ASD","asdprog")
         context!!.toast("Успешно")
         Intent(context, BaseActivity::class.java).also {
             startActivity(it)

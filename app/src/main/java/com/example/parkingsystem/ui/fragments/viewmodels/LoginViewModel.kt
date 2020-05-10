@@ -22,12 +22,10 @@ class LoginViewModel:ViewModel() {
 
     fun onRegisterClicked(view: View) {
         if(!number.isNullOrEmpty() && !password.isNullOrEmpty()) {
+            listener!!.onProgress()
             CoroutineScope(IO).launch {
                 val data = LoginModel(number!!,password!!)
                 val response = LoginRepo().login(data)
-                withContext(Main){
-                    listener!!.onProgress()
-                }
                 if(response.isSuccessful){
                     if(response.body()!!.success){//server request is successfull
                         User.name = ""// save on kotpref

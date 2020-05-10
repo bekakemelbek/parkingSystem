@@ -62,7 +62,7 @@ interface Api {
     companion object {
         fun create():Api{
             return Retrofit.Builder()
-                .baseUrl("https://19e0105d.ngrok.io/api/")
+                .baseUrl("https://fd6c3b64.ngrok.io/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(Api::class.java)
