@@ -2,6 +2,7 @@ package com.example.parkingsystem.ui.activity.viewmodels
 
 import android.app.Activity
 import android.content.Context
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.example.parkingsystem.network.model.RegisterQueryModel
@@ -34,8 +35,8 @@ class RegisterViewModel: ViewModel() {
     var listener:RegistrationListener? = null
 
     fun initActivity(context:Context) {
-        number = (context as Activity).intent.getStringExtra("number")!!
-        context.numberEdit.text = context.intent.getStringExtra("number")!!.toEditable()
+        number = "+77014430850"
+        (context as Activity).numberEdit.text = context.intent.getStringExtra("number")!!.toEditable()
         context.numberEdit.isEnabled = false
     }
 
@@ -52,6 +53,7 @@ class RegisterViewModel: ViewModel() {
             CoroutineScope(IO).launch {
                 val data = RegisterQueryModel(number!!,password!!,carNumber,carmodel!!)
                 val response = RegisterRepo().register(data)
+                Log.e("RESPONSE",response.body().toString())
                 if(response.isSuccessful){
                     if(response.body()!!.success){//server request is successfull
                         User.name = name!!// save on kotpref

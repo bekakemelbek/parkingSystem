@@ -2,6 +2,7 @@ package com.example.parkingsystem.ui.fragments.viewmodels
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.example.parkingsystem.ui.activity.RegistrationActivity
@@ -31,7 +32,7 @@ class RegistrationViewModel:ViewModel() {
         }
 
         override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
-
+            Log.e("ASD","Send")
         }
     }
 

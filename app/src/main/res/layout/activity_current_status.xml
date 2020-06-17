@@ -72,8 +72,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:textColor="@color/green"
-                    android:text="машина находится на парковке"
+                    android:textColor="@color/red"
+                    android:text="у вас нет активных заявок"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
@@ -120,15 +120,7 @@
                     android:layout_marginTop="30dp"
                     app:layout_constraintStart_toStartOf="@id/image"
                     app:layout_constraintEnd_toEndOf="@id/image"
-                    android:text="Парковка на Жарокова 16.  adf asd fasd fasdf asd
-                    asd fasfd asdf asd fsdf asfd sadf
-                     asd fsd fasdf asdf
-                     asdf asd fasdf
-                     asd fasd fasdf dsaf
-                     asdf asdf asdf asdfjksdfjksldfhklsajdfhkalsjdfhaskldjfhasdkljfhashdjkf asdf asdf asdf asdf
-                     as dfasdf adsf asdf asdf asdf asjldf ahsjdf asdf asd
-                      asdf asdf asdf asdf jaksdfhjklashdf asd f
-                      asdf Круглосуточная охрана. Работает 24 часа."
+                    android:text=""
                     app:layout_constraintTop_toBottomOf="@id/parkingName"/>
 
                 <Button
@@ -143,6 +135,7 @@
                     app:layout_constraintStart_toStartOf="@id/image"
                     app:layout_constraintEnd_toEndOf="@id/image"
                     android:layout_margin="10dp"
+                    android:visibility="gone"
                     app:layout_constraintWidth_percent="0.35"
                     android:fontFamily="@font/comfortaa"
                     android:text="Отменить заявку"

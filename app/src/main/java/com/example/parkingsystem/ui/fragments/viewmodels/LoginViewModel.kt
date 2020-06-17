@@ -28,7 +28,7 @@ class LoginViewModel:ViewModel() {
                 val response = LoginRepo().login(data)
                 if(response.isSuccessful){
                     if(response.body()!!.success){//server request is successfull
-                        User.name = ""// save on kotpref
+                        User.name = "Ermek"// save on kotpref
                         User.carNumber = response.body()!!.data!!.carNumber
                         User.phone = number!!
                         User.id = response.body()!!.data!!.id
